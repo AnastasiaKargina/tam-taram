@@ -179,13 +179,21 @@ body {
     height: 324px;
     background-color: #252525;
     padding-top: 31px;
-    &__icon-messeger {
+    &__icon-messager {
         list-style-type: none;
         display: flex;
         padding-left: 27px;
         &__indent {
             margin: 0;
             padding-left: 20px;
+        }
+        &__indent svg{
+            fill:grey;
+            height: 19px;
+        }
+        &__indent:hover svg{
+            fill:brown;
+
         }
     }
 }

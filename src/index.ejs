@@ -163,9 +163,13 @@ const craft = [
 </section>
 <footer class="footer">
     <!--мобильная версия -->
-    <ul class="footer__icon-messeger">
+    <ul class="footer__icon-messager">
         <% icons.forEach((item) => { %>
-        <li class="footer__icon-messeger__indent"><a src="#"><img src="img/ico_<%=item.icon%>.svg" height="19px"></a></li>
+        <li class="footer__icon-messager__indent">
+            <a href="#"><!-- добавить в массив ссылки-->
+                <%- include("img/ico_" + item.icon + ".svg") %>
+            </a>
+        </li>
         <% }) %>
     </ul>
     <div id="location">LOCATION:UNITED STATES</div>
