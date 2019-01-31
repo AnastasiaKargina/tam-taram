@@ -69,14 +69,15 @@ const craft = [
         </div>
 
 
-        <div class="header__top__menu"><!--  -->
-            <label for="burger" class="nav-burger">Меню</label>
+        <div class="header__top__menu nav-burger"><!--  -->
             <input class="nav-burger__checkbox" type="checkbox" id="burger">
+            <label for="burger" class="nav-burger__label"></label>
 
-            <ul class="links">
+
+            <ul class="nav-burger__menu">
                 <% menuItems.forEach((item) => { %>
-                    <li id="li-style">
-                        <a id="a-style" href="<%= item.link; %>">
+                    <li class="nav-burger__elem">
+                        <a class="nav-burger__link" href="<%= item.link %>">
                             <%= item.title %>
                         </a>
                     </li>

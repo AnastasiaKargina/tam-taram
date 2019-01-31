@@ -26,74 +26,13 @@ body {
                 float: left;
             }
         }
-
-        &__menu {
-            float: left;
-            @media @tablet {
-                display: none;
-            }
-            .links {
-                padding: 0;
-                display: none;
-                margin: 0;
-                position: absolute;
-                width: 100%;
-                height: 1100px;
-                list-style: none;
-                background-color: #262626;
-                text-align: center;
-            }
-            #li-style {
-                font-size: 18pt;
-                color: black;
-                padding-top: 10%;
-
-            }
-            #a-style {
-                color: #cccccc;
-                text-decoration: none;
-                font-family: 'PT Sans', sans-serif;
-            }
-            #a-style:hover {
-                color: white;
-            }
-
-        }
-
-        .nav-burger {
-            margin-top: 20px;
-            margin-left: 20px;
-            display: block;
-            width: 32px;
-            height: 30px;
-            background: url('../img/menu.svg') no-repeat;
-            background-size: cover;
-            font-size: 0;
-            &__checkbox {
-                display: none;
-                &:checked {
-                    + .nav-burger {
-                        background: url('../img/ico_facebook.svg');
-                    }
-                    ~ .links {
-                        display: block;
-                    }
-                }
-            }
-        }
-
-        #burger {
-            display: none;
-        }
-
         &__logo {
             width: 235px;
             margin-left: 60px;
             padding-top: 23px;
-            @media@tablet {
+            @media @tablet {
                 width: 330px;
                 margin: 0 auto;
-
             }
         }
         &__search {
@@ -199,10 +138,10 @@ body {
             margin-bottom: 70px;
         }
     }
-    &__slider{
-       height: 800px;
+    &__slider {
+        height: 800px;
         overflow: hidden;
-        @media@tablet{
+        @media @tablet {
             height: auto;
         }
     }
@@ -244,21 +183,24 @@ body {
         list-style-type: none;
         display: flex;
         padding-left: 27px;
-        &__indent{
+        &__indent {
             margin: 0;
             padding-left: 20px;
         }
     }
 }
+
 #text1 {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 12pt;
 
 }
+
 #text2 {
     font-family: 'PT Sans', sans-serif;
     font-size: 12pt;
 }
+
 #location {
     margin-left: 27px;
     font-size: 12pt;
@@ -340,6 +282,55 @@ body {
         margin-left: 1600px;
         text-align: right;
 
+    }
+}
+
+.nav-burger {
+    float: left;
+    @media @tablet {
+        display: none;
+    }
+    &__label {
+        margin-top: 20px;
+        margin-left: 20px;
+        display: block;
+        width: 32px;
+        height: 30px;
+        background: url('../img/menu.svg') no-repeat;
+        background-size: cover;
+    }
+    &__checkbox {
+        display: none;
+    }
+    &__checkbox:checked + &__label {
+        background: url('../img/ico_facebook.svg');
+    }
+    &__checkbox:checked ~ &__menu {
+        display: block;
+    }
+    &__menu {
+        padding: 0;
+        display: none;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        height: 1100px;
+        list-style: none;
+        background-color: #262626;
+        text-align: center;
+    }
+    &__elem {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    &__link {
+        color: #ccc;
+        text-decoration: none;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 18pt;//заменить
+    }
+    &__link:hover {
+        color: white;
     }
 }
 
