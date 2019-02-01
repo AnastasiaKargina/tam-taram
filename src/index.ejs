@@ -122,7 +122,7 @@ const craft = [
 <section class="section">
     <h4 class="section__videos">VIDEOS</h4>
     <a data-fancybox href="https://youtu.be/gr8u2KXuGXA">
-        <div class="p"><img width="100%" src="https://img.youtube.com/vi/gr8u2KXuGXA/hqdefault.jpg"></div>
+        <div class="section__video-wrapper"><img width="100%" src="https://img.youtube.com/vi/gr8u2KXuGXA/hqdefault.jpg"></div>
     </a>
     <div class="section_text-1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Pellentesque lobortis, nisl at ullamcorper egestas,
@@ -130,10 +130,10 @@ const craft = [
     </div>
     <span id="headline">STEP <span id="color-elem">BY</span> STEP</span>
 
-    <div id="slider" class="section__slider">
+    <div class="section__slider">
         <% step.forEach((item) => { %>
             <a data-fancybox href="https://youtu.be/<%= item.id %>">
-                <div class="p">
+                <div class="section__video-wrapper">
                     <img width="100%" src="https://img.youtube.com/vi/<%= item.id %>/hqdefault.jpg">
                 </div>
             </a>
@@ -141,20 +141,20 @@ const craft = [
     </div>
     <button id="loadMore" onclick="loading()">LOAD MORE</button>
     <div id="headline">CRAFT <span id="color-elem">EDUCATION</span></div>
-    <div id="slider2" class="section__slider">
+    <div  class="section__slider">
         <% craft.forEach((item) => { %>
             <a data-fancybox href="https://youtu.be/<%= item.id %>">
-                <div class="p"><img width="100%"
+                <div class="section__video-wrapper"><img width="100%"
                                     src="https://img.youtube.com/vi/<%= item.id %>/hqdefault.jpg">
                 </div>
             </a>
         <% }) %>
     </div>
     <span id="headline">INSPIRATION</span>
-    <div id="slider3" class="section__slider">
+    <div  class="section__slider">
         <% inspiration.forEach((item) => { %>
             <a data-fancybox href="https://youtu.be/<%= item.id %>">
-                <div class="p"><img width="100%"
+                <div class="section__video-wrapper"><img width="100%"
                                     src="https://img.youtube.com/vi/<%= item.id %>/hqdefault.jpg">
                 </div>
             </a>
@@ -175,7 +175,7 @@ const craft = [
     <div id="location">LOCATION:UNITED STATES</div>
     <div id="language">LANGUAGE:ENGLISH</div>
     <div id="text3">PRIVACY POLICY TERMS OF USE CONTACT US</div>
-    <div id="text4">JHJHHJHJHJH</div>
+    <div id="text4">--</div>
     <!-- версия начиная с планшетов -->
 </footer>
 
