@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -24,52 +24,52 @@
     {title: 'Professional', link: '#'}
 ]; %>
 
-<% const step = [
-    {id: 'z8M0Fa1JVco'},
-    {id: 'Wi2KcdoCuo4'},
-    {id: '8H6dYUgQKB8'},
-    {id: 'PZjGrmHdFME'},
-    {id: '_wLGr24VeoI'},
-    {id: 'DG4FAU5qmMY'}
-]
-%>
-<%
-const craft = [
-    {id: 'RmNWNLXmswk'},
-    {id: '-tztXOz8Vc0'},
-    {id: 'kUfIVtyydgQ'},
-    {id: 'RmNWNLXmswk'}
 
-]
-%>
-<% const inspiration = [
-    {id: 'VmmwwzR536g'},
-    {id: 'vz0k8O-Ef9Y'},
-    {id: '6oPBFnsqJW8'},
-    {id: 'VmmwwzR536g'}
+<% const videos=[
+    [   {title: '<span class="headline">STEP <span class="color-elem">BY</span> STEP</span>'},
+        {id: 'z8M0Fa1JVco'},
+        {id: 'Wi2KcdoCuo4'},
+        {id: '8H6dYUgQKB8'},
+        {id: 'PZjGrmHdFME'},
+        {id: '_wLGr24VeoI'},
+        {id: 'DG4FAU5qmMY'}
+    ]
+    ,
+    [   {title: '<div class="headline">CRAFT  <span class="color-elem">EDUCATION</span> </div>'},
+        {id: 'RmNWNLXmswk'},
+        {id: '-tztXOz8Vc0'},
+        {id: 'kUfIVtyydgQ'},
+        {id: 'RmNWNLXmswk'}
+    ],
+    [   {title: '<span class="headline">INSPIRATION</span>'},
+        {id: 'VmmwwzR536g'},
+        {id: 'vz0k8O-Ef9Y'},
+        {id: '6oPBFnsqJW8'},
+        {id: 'VmmwwzR536g'}
+    ]
 
 ]
 %>
 <% const icons = [
-    {icon: 'facebook'},
-    {icon: 'twitter'},
-    {icon: 'pinterest'},
-    {icon: 'youtube'},
-    {icon: 'instagram'}
+    {icon: 'facebook',link: '#'},
+    {icon: 'twitter',link: '#'},
+    {icon: 'pinterest',link: '#'},
+    {icon: 'youtube',link: '#'},
+    {icon: 'instagram',link: '#'}
 ]
 %>
 
 <header class="header">
     <div class="header__top">
-        <div class="header__top__location">
-            <span id="text1">NEAREST SALON</span>
-            <img src="img/ico_dropdown.svg" height="10px">
-            <br>
-            <span id="text2">Plush Salon 91101</span>
+
+        <div class="header__top location">
+            <span class="location__elem">NEAREST SALON</span>
+            <img class="icon-dropdown" src="img/ico_dropdown.svg" >
+            <div class="location__title-salon">Plush Salon 91101</div>
         </div>
 
 
-        <div class="header__top__menu nav-burger"><!--  -->
+        <div class="header__top__menu nav-burger">
             <input class="nav-burger__checkbox" type="checkbox" id="burger">
             <label for="burger" class="nav-burger__label"></label>
 
@@ -87,96 +87,80 @@ const craft = [
         </div>
 
 
-        <div class="header__top__logo">
-            <img class="header__top__logo_size" src="img/logo.svg">
+        <div class="header__top logo">
+            <img src="img/logo.svg">
         </div>
-        <div class="header__top__search">
-            <img src="img/ico_search.svg" height="24px">
+
+        <div class="search">
+            <img  class="search__size" src="img/ico_search.svg" >
         </div>
+
     </div>
+
     <div class="header__bottom">
-        <div class="header__bottom__location">
-            <span id="text1">NEAREST SALON</span>
-            <img src="img/ico_dropdown.svg" height="10px">
-            <br>
-            <span id="text2">Plush Salon 91101</span>
-        </div>
-        <div class="header__bottom__search">
-            <img src="img/ico_search.svg" height="24px">
-        </div>
 
-        <div class="header__bottom__menu">
+        <div class="nav-menu">
             <% menuItems.forEach((item) => { %>
-                <div class="header__bottom__menu_links">
-                    <li><a id="menu-link" href="<%= item.link; %>"><%= item.title %></a></li>
+                <div class="nav-menu__wrapper-elem">
+                    <a class="menu-link" href="<%= item.link; %>"><%= item.title %></a>
                 </div>
-
             <% }) %>
         </div>
-
 
     </div>
 </header>
 
 
 <section class="section">
-    <h4 class="section__videos">VIDEOS</h4>
-    <a data-fancybox href="https://youtu.be/gr8u2KXuGXA">
-        <div class="section__video-wrapper"><img width="100%" src="https://img.youtube.com/vi/gr8u2KXuGXA/hqdefault.jpg"></div>
-    </a>
-    <div class="section_text-1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <h1 class="headline-videos">VIDEOS</h1>
+
+    <div class="video">
+        <a data-fancybox href="https://youtu.be/gr8u2KXuGXA">
+            <div class="video__wrapper"><img class="video_size" src="https://img.youtube.com/vi/gr8u2KXuGXA/hqdefault.jpg"></div>
+        </a>
+    </div>
+
+    <div class="section__text-1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Pellentesque lobortis, nisl at ullamcorper egestas,
         felisadi piscing dolor, a interdum lorem urna quis magna.
-    </div>
-    <span id="headline">STEP <span id="color-elem">BY</span> STEP</span>
+    </div><!--  изменить название класса-->
+    <% for(var i=0;i<videos.length;i++){%>
+        <%-videos[i][0].title%>
+        <div class="slider">
+        <% for(var j=1;j<videos[i].length;j++){ %>
 
-    <div class="section__slider">
-        <% step.forEach((item) => { %>
-            <a data-fancybox href="https://youtu.be/<%= item.id %>">
-                <div class="section__video-wrapper">
-                    <img width="100%" src="https://img.youtube.com/vi/<%= item.id %>/hqdefault.jpg">
+            <a data-fancybox href="https://youtu.be/<%= videos[i][j].id %>">
+                <div class="video__wrapper">
+                    <img  class="video_size" src="https://img.youtube.com/vi/<%= videos[i][j].id %>/hqdefault.jpg">
                 </div>
             </a>
-        <% }) %>
-    </div>
-    <button id="loadMore" onclick="loading()">LOAD MORE</button>
-    <div id="headline">CRAFT <span id="color-elem">EDUCATION</span></div>
-    <div  class="section__slider">
-        <% craft.forEach((item) => { %>
-            <a data-fancybox href="https://youtu.be/<%= item.id %>">
-                <div class="section__video-wrapper"><img width="100%"
-                                    src="https://img.youtube.com/vi/<%= item.id %>/hqdefault.jpg">
-                </div>
-            </a>
-        <% }) %>
-    </div>
-    <span id="headline">INSPIRATION</span>
-    <div  class="section__slider">
-        <% inspiration.forEach((item) => { %>
-            <a data-fancybox href="https://youtu.be/<%= item.id %>">
-                <div class="section__video-wrapper"><img width="100%"
-                                    src="https://img.youtube.com/vi/<%= item.id %>/hqdefault.jpg">
-                </div>
-            </a>
-        <% }) %>
-    </div>
+
+    <%}%>
+        </div>
+    <% } %>
+    <button class="loadMore" onclick="loading()">LOAD MORE</button>
+
 </section>
 <footer class="footer">
-    <!--мобильная версия -->
-    <ul class="footer__icon-messager">
+    <ul class="icon-social">
         <% icons.forEach((item) => { %>
-        <li class="footer__icon-messager__indent">
-            <a href="#"><!-- добавить в массив ссылки-->
-                <%- include("img/ico_" + item.icon + ".svg") %>
-            </a>
-        </li>
+            <li class="icon-social__indent">
+                <a href="<%=item.link%>"><!-- добавить в массив ссылки-->
+                    <%- include("img/ico_" + item.icon + ".svg") %>
+                </a>
+            </li>
         <% }) %>
     </ul>
-    <div id="location">LOCATION:UNITED STATES</div>
-    <div id="language">LANGUAGE:ENGLISH</div>
-    <div id="text3">PRIVACY POLICY TERMS OF USE CONTACT US</div>
-    <div id="text4">--</div>
-    <!-- версия начиная с планшетов -->
+    <div class="settings">
+        <div id="location">LOCATION: UNITED STATES</div>
+        <div id="language">LANGUAGE: ENGLISH</div>
+    </div>
+    <div class="wappers-elem">
+        <div id="text3">PRIVACY POLICY TERMS OF USE CONTACT US</div>
+        <div id="text4">CONTACT US NEWSLETTER SITEMAP</div>
+    </div>
+
 </footer>
 
 
