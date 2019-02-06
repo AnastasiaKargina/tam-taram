@@ -29,7 +29,6 @@ body {
             }
         }
 
-
     }
 }
 
@@ -45,15 +44,15 @@ body {
     &__elem {
         font-family: 'PT Sans Narrow', sans-serif;
         font-size: 0.7em;
-        @media@tablet{
+        @media @tablet {
             font-size: 0.8em;
         }
     }
 
-    &__title-salon{
+    &__title-salon {
         font-family: 'PT Sans', sans-serif;
         font-size: 0.7em;
-        @media@tablet{
+        @media @tablet {
             font-size: 0.8em;
         }
     }
@@ -68,8 +67,9 @@ body {
         color: white;
     }
 }
-.icon-dropdown{
-    height:10px;
+
+.icon-dropdown {
+    height: 10px;
 }
 
 .logo {
@@ -88,7 +88,7 @@ body {
     height: 24px;
     margin-right: 25px;
     margin-top: -10px;
-    &__size{
+    &__size {
         height: 24px;
     }
     float: right;
@@ -98,6 +98,7 @@ body {
 
     }
 }
+
 .nav-menu {
     display: none;
     @media @tablet {
@@ -106,7 +107,7 @@ body {
         width: 850px;
         list-style-type: none;
 
-        &__wrapper-elem{
+        &__wrapper-elem {
             font-family: 'PT Sans', sans-serif;
             height: 15px;
             padding: 17px;
@@ -119,14 +120,13 @@ body {
         }
     }
 }
+
 .menu-link {
     font-family: 'PT Sans', sans-serif;
-    color: #cccccc;
+    color: #ccc;
     font-size: 1.2em;
     text-decoration: none;
 }
-
-
 
 .section {
     padding-top: 50px;
@@ -135,30 +135,51 @@ body {
     height: 100%;
     background-color: white;
     @media @tablet {
-        padding-left: 63px;
-        padding-right: 64px;
+        padding-left: 42px;
+        padding-right: 46px;
     }
     @media @desktop {
-        padding-left: 245px;
-        padding-right: 245px;
+        padding-left: 244px;
+        padding-right: 236px;
     }
     &__text-1 {
         padding-left: 6px;
-        font-size: 16pt;
+        font-size: 15px;
         font-family: 'PT Sans', sans-serif;
         border-bottom: 2px solid grey;
         margin-bottom: 20px;
         @media @tablet {
-            font-size: 30pt;
+            font-size: 30px;
             font-weight: bold;
             margin-bottom: 70px;
         }
     }
+    &__slider {
+        height: 800px;
+        overflow: hidden;
+        @media @tablet {
+            height: auto;
+        }
+        &__button-next {
+            width: 25px;
+            transform: rotate(270deg);
+            position: absolute;
+            top: 40%;
+            right: -35px;
 
+        }
+        &__button-prev {
+            position: absolute;
+            top: 40%;
+            left: -35px;
+            width: 25px;
+            transform: rotate(90deg);
 
+        }
+    }
 }
 
-.headline-videos{
+.headline-videos {
     font-family: 'PT Sans', sans-serif;
     font-size: 28pt;
     margin: 0 8px;
@@ -168,35 +189,22 @@ body {
     }
 }
 
-
 .video {
     &__wrapper {
-        margin: 0 auto;
-        overflow: hidden;
-        max-width: 700px;
-
-        @media @tablet {
-            max-width: 900px;
-        }
-        @media @desktop {
-            max-width: 1000px;
-            margin: 0;
-        }
-    }
-    &_size{
         width: 100%;
-        margin-top: -40px;
-        margin-bottom: -40px;
-        @media@tablet{
-            margin-top: -65px;
-            margin-bottom: -68px;
-        }
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    &_size {
+        object-fit: cover;
+        width: 100%;
+        height: 80%;
     }
 }
 
-.headline{
+.headline {
     padding-top: 50px;
-    font-size: 30pt;
+    font-size: 30px;
     font-family: 'PT Sans', sans-serif;
     font-weight: 700;
 }
@@ -214,30 +222,44 @@ body {
         display: none;
     }
 }
-.slider {
-    height: 800px;
-    overflow: hidden;
-    @media @tablet {
-        height: auto;
-    }
-    &__button-next{
-    }
-    &__button-prev{
-    }
-}
+
 .color-elem {
     color: #cd1d2c;
 }
+
 .footer {
     font-family: 'PT Sans', sans-serif;
-    height: 324px;
+    height: 355px;
     background-color: #252525;
-    padding-top: 31px;
-
-    @media@tablet{
-
+    position: relative;
+    padding-top: 25px;
+    @media @tablet {
+        height: 43px;
+        padding-top: 0;
     }
+    &__menu {
+        margin-top: 25px;
+        width: 250px;
+        padding-left: 0;
+        margin-left: 25px;
+        @media @tablet {
+            margin-bottom: 0;
+            position: absolute;
+            top: -10px;
+        }
+        &__item {
+            list-style-type: none;
+            float: left;
+            margin-right: 11px;
+            line-height: 11px;
+        }
 
+        &__link {
+            text-decoration: none;
+            font-size: 11px;
+            color: #808080;
+        }
+    }
 }
 
 .icon-social {
@@ -246,7 +268,8 @@ body {
     height: 25px;
     list-style-type: none;
     padding-left: 25px;
-    @media@tablet{
+    @media @tablet {
+        padding-top: 15px;
         padding-left: 0;
         height: 30px;
         width: 250px;
@@ -258,66 +281,47 @@ body {
         float: left;
 
     }
-    &__indent svg{
-        fill:grey;
+    &__indent svg {
+        fill: grey;
         height: 19px;
     }
-    &__indent:hover svg{
-        fill:brown;
+    &__indent:hover svg {
+        fill: brown;
     }
 }
+
 #location {
-    font-size: 1em;
+    font-size: 11px;
     color: #cecece;
-    @media@tablet{
-    }
 }
-.settings{
-    padding-left: 25px;
+
+.settings {
+    margin-left: 25px;
     width: 210px;
     clear: left;
-    @media@tablet{
-        padding-left: 0;
-        float: right;
-        margin-top: -15px;
+    @media @tablet {
+        width: 150px;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        text-align: right;
     }
 }
+
 #language {
 
-    font-size: 1em;
+    font-size: 11px;
     color: #cecece;
-    @media@tablet{
 
-    }
 }
-.wappers-elem{
-    margin-left:27px;
-    @media@tablet{
+
+.wappers-elem {
+    margin-left: 27px;
+    @media @tablet {
         width: 350px;
         margin-top: -35px;
-
     }
 }
-#text3 {
-
-    margin-top: 43px;
-    font-size: 1em;
-    color: #808080;
-    @media@tablet{
-        margin-top: 0;
-    }
-}
-
-#text4 {
-    font-size: 1em;
-    padding-top: 5px;
-    color: #808080;
-
-
-}
-
-
-
 
 /*
 .slick-arrow {
@@ -339,12 +343,12 @@ body {
 
 .slick-prev {
     background: url('../img/ico_dropdown.svg') no-repeat;
-    transform: rotate(90deg);
+
 }
 
 .slick-next {
     background: url('../img/ico_dropdown.svg') no-repeat;
-    transform: rotate(270deg);
+
     @media @tablet {
         margin-top: -175px;
         margin-left: 575px;
@@ -375,12 +379,19 @@ body {
         display: none;
     }
     &__checkbox:checked + &__label {
-        background: url('../img/ico_facebook.svg');
+        background: url('../img/forbidden-mark.svg');
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        position: absolute;
+        z-index: 2;
+        margin-top: 15px;
     }
     &__checkbox:checked ~ &__menu {
         display: block;
     }
     &__menu {
+        z-index: 1;
         padding: 0;
         display: none;
         margin: 0;
@@ -392,17 +403,76 @@ body {
         text-align: center;
     }
     &__elem {
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-top: 20px;
+        padding-bottom: 15px;
     }
+
     &__link {
         color: #ccc;
         text-decoration: none;
         font-family: 'PT Sans', sans-serif;
         font-size: 1.4em;
     }
+
     &__link:hover {
         color: white;
     }
 }
 
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    height: 42px;
+}
+
+input {
+    height: 30px;
+    width: 0;
+    padding: 0 42px 0 15px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    background: transparent;
+    transition: .4s cubic-bezier(0, 0.8, 0, 1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+input:focus {
+    width: 100px;
+    z-index: 2;
+    color: #cecece;
+    font-size: 0.8em;
+    border-bottom: 2px solid #cccccc;
+    @media @desktop {
+        width: 220px;
+        font-size: 1.2em;
+    }
+}
+
+.button-search {
+    background: #262626;
+    border: none;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    @media @tablet {
+        background-color: #6917d2;
+    }
+}
+
+.slick-slide img {
+    @media @tablet {
+        display: block;
+        width: 300px;
+        height: 150px;
+        object-fit: cover;
+        margin-right: 25px;
+    }
+}

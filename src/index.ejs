@@ -24,9 +24,8 @@
     {title: 'Professional', link: '#'}
 ]; %>
 
-
-<% const videos=[
-    [   {title: '<span class="headline">STEP <span class="color-elem">BY</span> STEP</span>'},
+<% const videos = [
+    [{title: '<span class="headline">STEP <span class="color-elem">BY</span> STEP</span>'},
         {id: 'z8M0Fa1JVco'},
         {id: 'Wi2KcdoCuo4'},
         {id: '8H6dYUgQKB8'},
@@ -35,13 +34,13 @@
         {id: 'DG4FAU5qmMY'}
     ]
     ,
-    [   {title: '<div class="headline">CRAFT  <span class="color-elem">EDUCATION</span> </div>'},
+    [{title: '<div class="headline">CRAFT  <span class="color-elem">EDUCATION</span> </div>'},
         {id: 'RmNWNLXmswk'},
         {id: '-tztXOz8Vc0'},
         {id: 'kUfIVtyydgQ'},
         {id: 'RmNWNLXmswk'}
     ],
-    [   {title: '<span class="headline">INSPIRATION</span>'},
+    [{title: '<span class="headline">INSPIRATION</span>'},
         {id: 'VmmwwzR536g'},
         {id: 'vz0k8O-Ef9Y'},
         {id: '6oPBFnsqJW8'},
@@ -51,11 +50,11 @@
 ]
 %>
 <% const icons = [
-    {icon: 'facebook',link: '#'},
-    {icon: 'twitter',link: '#'},
-    {icon: 'pinterest',link: '#'},
-    {icon: 'youtube',link: '#'},
-    {icon: 'instagram',link: '#'}
+    {icon: 'facebook', link: '#'},
+    {icon: 'twitter', link: '#'},
+    {icon: 'pinterest', link: '#'},
+    {icon: 'youtube', link: '#'},
+    {icon: 'instagram', link: '#'}
 ]
 %>
 
@@ -64,7 +63,7 @@
 
         <div class="header__top location">
             <span class="location__elem">NEAREST SALON</span>
-            <img class="icon-dropdown" src="img/ico_dropdown.svg" >
+            <img class="icon-dropdown" src="img/ico_dropdown.svg">
             <div class="location__title-salon">Plush Salon 91101</div>
         </div>
 
@@ -91,9 +90,10 @@
             <img src="img/logo.svg">
         </div>
 
-        <div class="search">
-            <img  class="search__size" src="img/ico_search.svg" >
-        </div>
+        <form class="search">
+            <input type="text" placeholder="Искать...">
+            <button class="button-search" type="submit"><img class="search__size" src="img/ico_search.svg"></button>
+        </form>
 
     </div>
 
@@ -115,8 +115,10 @@
     <h1 class="headline-videos">VIDEOS</h1>
 
     <div class="video">
-        <a data-fancybox href="https://youtu.be/gr8u2KXuGXA">
-            <div class="video__wrapper"><img class="video_size" src="https://img.youtube.com/vi/gr8u2KXuGXA/hqdefault.jpg"></div>
+        <a data-fancybox href="https://youtu.be/8H6dYUgQKB8">
+            <div class="video__wrapper">
+                <img class="video_size" src="https://img.youtube.com/vi/8H6dYUgQKB8/maxresdefault.jpg">
+            </div>
         </a>
     </div>
 
@@ -125,41 +127,54 @@
         Pellentesque lobortis, nisl at ullamcorper egestas,
         felisadi piscing dolor, a interdum lorem urna quis magna.
     </div><!--  изменить название класса-->
-    <% for(var i=0;i<videos.length;i++){%>
-        <%-videos[i][0].title%>
+    <% for(var i = 0;i < videos.length;i++){ %>
+        <%- videos[i][0].title %>
         <div class="slider">
-        <% for(var j=1;j<videos[i].length;j++){ %>
+            <% for(var j = 1;j < videos[i].length;j++){ %>
 
-            <a data-fancybox href="https://youtu.be/<%= videos[i][j].id %>">
-                <div class="video__wrapper">
-                    <img  class="video_size" src="https://img.youtube.com/vi/<%= videos[i][j].id %>/hqdefault.jpg">
-                </div>
-            </a>
+                <a data-fancybox href="https://youtu.be/<%= videos[i][j].id %>">
+                    <div class="video__wrapper">
+                        <img class="video_size" src="https://img.youtube.com/vi/<%= videos[i][j].id %>/maxresdefault.jpg">
+                    </div>
+                </a>
 
-    <%}%>
+            <% } %>
         </div>
+        <button class="loadMore" onclick="loading()">LOAD MORE</button>
     <% } %>
-    <button class="loadMore" onclick="loading()">LOAD MORE</button>
 
 </section>
 <footer class="footer">
     <ul class="icon-social">
-        <% icons.forEach((item) => { %>
+        <% icons.forEach(item => { %>
             <li class="icon-social__indent">
-                <a href="<%=item.link%>"><!-- добавить в массив ссылки-->
+                <a class="icon-social__link" href="<%= item.link %>">
                     <%- include("img/ico_" + item.icon + ".svg") %>
                 </a>
             </li>
         <% }) %>
     </ul>
     <div class="settings">
-        <div id="location">LOCATION: UNITED STATES</div>
-        <div id="language">LANGUAGE: ENGLISH</div>
+        <div class="settings__item" id="location">LOCATION: UNITED STATES</div>
+        <div class="settings__item" id="language">LANGUAGE: ENGLISH</div>
     </div>
-    <div class="wappers-elem">
-        <div id="text3">PRIVACY POLICY TERMS OF USE CONTACT US</div>
-        <div id="text4">CONTACT US NEWSLETTER SITEMAP</div>
-    </div>
+
+    <% const foooterMenu = [
+        {title: 'PRIVACY POLICY', link: '#'},
+        {title: 'TERMS OF USE', link: '#'},
+        {title: 'CONTACT US', link: '#'},
+        {title: 'NEWSLETTER', link: '#'},
+        {title: 'SITEMAP', link: '#'}
+    ]
+    %>
+
+    <ul class="footer__menu">
+        <% foooterMenu.forEach(item => { %>
+            <li class="footer__menu__item">
+                <a class="footer__menu__link" href="<%= item.link %>"><%= item.title %></a>
+            </li>
+        <% }) %>
+    </ul>
 
 </footer>
 
