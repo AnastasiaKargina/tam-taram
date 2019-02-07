@@ -20,14 +20,6 @@ body {
         height: 50px;
         width: 100%;
         background-color: #262626;
-        &__search {
-            padding-top: 12px;
-            margin-right: 20px;
-            text-align: right;
-            @media @tablet {
-                display: none;
-            }
-        }
 
     }
 }
@@ -94,8 +86,10 @@ body {
     float: right;
     @media @tablet {
         display: block;
-        margin-top: -67px;
-
+        position: absolute;
+        margin-right: 0;
+        right: 20px;
+        margin-top: -73px;
     }
 }
 
@@ -104,7 +98,7 @@ body {
     @media @tablet {
         display: block;
         margin: 0 auto;
-        width: 850px;
+        width: 785px;
         list-style-type: none;
 
         &__wrapper-elem {
@@ -165,7 +159,7 @@ body {
             transform: rotate(270deg);
             position: absolute;
             top: 40%;
-            right: -35px;
+            right: -5px;
 
         }
         &__button-prev {
@@ -178,18 +172,17 @@ body {
         }
     }
 }
-
-.headline-videos {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 28pt;
-    margin: 0 8px;
-    padding: 0;
-    @media @tablet {
-        font-size: 5em;
+.videos{
+    height: 650px;
+    overflow: hidden;
+    @media@tablet{
+        height: auto;
+        overflow: initial;
     }
-}
-
-.video {
+    &__link{
+        display: block;
+        position: relative;
+    }
     &__wrapper {
         width: 100%;
         margin: 0 auto;
@@ -201,23 +194,33 @@ body {
         height: 80%;
     }
 }
+.headline-videos {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 28pt;
+    margin: 0 8px;
+    padding: 0;
+    @media @tablet {
+        font-size: 5em;
+    }
+}
 
 .headline {
-    padding-top: 50px;
     font-size: 30px;
     font-family: 'PT Sans', sans-serif;
     font-weight: 700;
 }
 
 .loadMore {
+    margin: 0 auto;
     font-family: 'PT Sans Narrow', sans-serif;
-    font-size: 14pt;
+    font-size: 16px;
     width: 140px;
     height: 44px;
     font-weight: 100;
     background-color: #262626;
-    color: #cccccc;
+    color: #ccc;
     border: 0;
+    margin-bottom: 50px;
     @media @tablet {
         display: none;
     }
@@ -243,6 +246,7 @@ body {
         padding-left: 0;
         margin-left: 25px;
         @media @tablet {
+            width: 210px;
             margin-bottom: 0;
             position: absolute;
             top: -10px;
@@ -269,14 +273,13 @@ body {
     list-style-type: none;
     padding-left: 25px;
     @media @tablet {
+        width: 195px;
         padding-top: 15px;
         padding-left: 0;
-        height: 30px;
-        width: 250px;
+        height: 28px;
         margin: 0 auto;
     }
     &__indent {
-
         padding-right: 20px;
         float: left;
 
@@ -286,7 +289,7 @@ body {
         height: 19px;
     }
     &__indent:hover svg {
-        fill: brown;
+        fill: #6917d2;
     }
 }
 
@@ -470,9 +473,52 @@ input:focus {
 .slick-slide img {
     @media @tablet {
         display: block;
-        width: 300px;
-        height: 150px;
+        width: 320px;
+        height: 160px;
         object-fit: cover;
-        margin-right: 25px;
+
+    }
+    @media@desktop{
+        display: block;
+        width: 250px;
+        height: 50%;
+
+    }
+}
+.slick-track{
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.play {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: #262626;
+    opacity: 0.6 ;
+    border-radius: 50px;
+    @media @tablet {
+        width: 60px;
+        height: 60px;
+        border: 1px solid black;
+        border-radius: 30px;
+    }
+    &__icon {
+        margin-left: 26px;
+        margin-top: 20px;
+        width: 60px;
+        height: 60px;
+        background: url('../img/play-black-triangle-interface-symbol-for-multimedia_icon-icons.com_72958.svg') no-repeat;
+        background-size: cover;
+        @media @tablet {
+            margin-left: 18px;
+            margin-top: 15px;
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+        }
     }
 }
