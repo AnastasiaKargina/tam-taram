@@ -99,30 +99,40 @@
 
     <div class="header__bottom">
         <nav>
-        <div class="nav-menu">
-            <% menuItems.forEach((item) => { %>
-                <div class="nav-menu__wrapper-elem">
-                    <a class="menu-link" href="<%= item.link; %>"><%= item.title %></a>
-                </div>
-            <% }) %>
-        </div>
+            <div class="nav-menu">
+                <% menuItems.forEach((item) => { %>
+                    <div class="nav-menu__wrapper-elem">
+                        <a class="menu-link" href="<%= item.link; %>"><%= item.title %></a>
+                    </div>
+                <% }) %>
+            </div>
         </nav>
     </div>
 </header>
 
 
 <section class="section">
+    <span class="breadcrumbs">
+        <ul class="breadcrumbs__style">
+            <li class="breadcrums__style item">
+                <a class="breadcrums__style link">HOME</a>
+            </li>
+            <li class="breadcrums__style item">
+                /<a class="breadcrums__style link_color">VIDEOS</a>
+            </li>
+        </ul>
+    </span>
     <h1 class="headline-videos">VIDEOS</h1>
 
 
-        <a class="videos__link"data-fancybox href="https://youtu.be/8H6dYUgQKB8">
-            <div class="videos__link play">
-                <div class="videos__link play__icon"></div>
-            </div>
-            <div class="videos__wrapper">
-                <img class="videos_size" src="https://img.youtube.com/vi/8H6dYUgQKB8/maxresdefault.jpg">
-            </div>
-        </a>
+    <a class="videos__link" data-fancybox href="https://youtu.be/8H6dYUgQKB8">
+        <div class="videos__link play">
+            <div class="videos__link play__icon"></div>
+        </div>
+        <div class="videos__wrapper">
+            <img class="videos_size" src="https://img.youtube.com/vi/8H6dYUgQKB8/maxresdefault.jpg">
+        </div>
+    </a>
 
     <div class="section__text-1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -130,24 +140,25 @@
         felisadi piscing dolor, a interdum lorem urna quis magna.
     </div><!--  изменить название класса-->
     <% for(var i = 0;i < videos.length;i++){ %>
-    <div class="g">
-        <%- videos[i][0].title %>
-        <div class="slider videos">
-            <% for(var j = 1;j < videos[i].length;j++){ %>
+        <div class="g">
+            <%- videos[i][0].title %>
+            <div class="slider videos">
+                <% for(var j = 1;j < videos[i].length;j++){ %>
 
-                <a  class="videos__link" data-fancybox href="https://youtu.be/<%= videos[i][j].id %>">
-                    <div class="videos__link play">
-                        <div class="videos__link play__icon"></div>
-                    </div>
-                    <div class="videos__wrapper">
-                        <img class="videos_size" src="https://img.youtube.com/vi/<%= videos[i][j].id %>/maxresdefault.jpg">
-                    </div>
-                </a>
+                    <a class="videos__link" data-fancybox href="https://youtu.be/<%= videos[i][j].id %>">
+                        <div class="videos__link play">
+                            <div class="videos__link play__icon"></div>
+                        </div>
+                        <div class="videos__wrapper">
+                            <img class="videos_size"
+                                 src="https://img.youtube.com/vi/<%= videos[i][j].id %>/maxresdefault.jpg">
+                        </div>
+                    </a>
 
-            <% } %>
+                <% } %>
+            </div>
+            <button class="loadMore">LOAD MORE</button>
         </div>
-        <button class="loadMore">LOAD MORE</button>
-    </div>
     <% } %>
 
 </section>
