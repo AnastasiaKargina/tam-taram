@@ -14,14 +14,15 @@
 </head>
 <body>
 <% const menuItems = [
-    {title: 'HairCare', link: '#'},
-    {title: 'Color', link: '#'},
-    {title: 'Styling', link: '#'},
-    {title: 'Get inspired', link: '#'},
-    {title: 'Social', link: '#'},
-    {title: 'News', link: '#'},
-    {title: 'About', link: '#'},
-    {title: 'Professional', link: '#'}
+    {title: 'HAIRCARE', link: '#'},
+    {title: 'COLOR', link: '#'},
+    {title: 'SRYLING', link: '#'},
+    {title: 'TEXTURE', link: '#'},
+    {title: 'GET INSPIRED', link: '#'},
+    {title: 'SOCIAL', link: '#'},
+    {title: 'NEWS', link: '#'},
+    {title: 'ABOUT', link: '#'},
+    {title: 'PROFESSIONAL', link: '#'}
 ]; %>
 
 <% const videos = [
@@ -91,7 +92,7 @@
         </div>
 
         <form class="search">
-            <input type="text" placeholder="Искать...">
+            <input id="field" type="text" placeholder="Искать...">
             <button class="button-search" type="submit"><img class="search__size" src="img/ico_search.svg"></button>
         </form>
 
@@ -140,7 +141,7 @@
         felisadi piscing dolor, a interdum lorem urna quis magna.
     </div><!--  изменить название класса-->
     <% for(var i = 0;i < videos.length;i++){ %>
-        <div class="g">
+        <div class="wrap">
             <%- videos[i][0].title %>
             <div class="slider videos">
                 <% for(var j = 1;j < videos[i].length;j++){ %>

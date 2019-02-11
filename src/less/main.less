@@ -10,17 +10,31 @@ body {
 .header {
     width: 100%;
     height: 120px;
+    @media @tablet {
+        height: 112px;
+    }
+    @media @desktop {
+        height: 92px;
+    }
     &__top {
         width: 100%;
         height: 70px;
         background-color: #6917d2;
+        @media @desktop {
+            height: 57px;
+        }
     }
 
     &__bottom {
         height: 50px;
         width: 100%;
         background-color: #262626;
-
+        @media @tablet {
+            height: 42px;
+        }
+        @media @desktop {
+            height: 34px;
+        }
     }
 }
 
@@ -51,12 +65,16 @@ body {
     @media @tablet {
         background-color: #6917d2;
         display: block;
-        margin-top: 22px;
+        margin-top: 18px;
         margin-left: 16px;
         height: 20px;
         width: 200px;
         float: left;
         color: white;
+    }
+    @media@desktop{
+        margin-top: 15px;
+        margin-left: 40px;
     }
 }
 
@@ -70,15 +88,17 @@ body {
     margin-left: 66px;
     padding-top: 27px;
     @media @tablet {
-        width: 330px;
+        width: 342px;
+        height: 26px;
+        padding-top: 23px;
         margin: 0 auto;
     }
 }
 
 .search {
-    display: block;
-    width: 20px;
-    height: 24px;
+    position: relative;
+    width: 300px;
+    height: 42px;
     margin-right: 21px;
     margin-top: -17px;
     &__size {
@@ -89,37 +109,50 @@ body {
         display: block;
         position: absolute;
         margin-right: 0;
-        right: 20px;
-        margin-top: -73px;
+        right: 23px;
+        margin-top: -30px;
     }
 }
-
 .nav-menu {
     display: none;
     @media @tablet {
         display: block;
         margin: 0 auto;
-        width: 785px;
+        width: 775px;
         list-style-type: none;
-
-        &__wrapper-elem {
+    }
+    @media @desktop {
+        width: 945px;
+    }
+    &__wrapper-elem {
+        @media @tablet {
             font-family: 'PT Sans', sans-serif;
-            height: 15px;
-            padding: 17px;
+            height: 18px;
+            padding: 11px;
+            padding-right: 18px;
             background-color: #262626;
             float: left;
         }
+        @media @desktop {
+            height: 10px;
+            padding-top: 10px;
+            padding-right: 48px;
+            padding-left: 0;
+        }
+    }
 
-        &__wrapper-elem:hover {
+    &__wrapper-elem:hover {
+        @media @tablet {
             background-color: black;
         }
     }
+
 }
 
 .menu-link {
     font-family: 'PT Sans', sans-serif;
     color: #ccc;
-    font-size: 1.2em;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -130,6 +163,7 @@ body {
     height: 100%;
     background-color: white;
     @media @tablet {
+        padding-top: 42px;
         padding-left: 42px;
         padding-right: 46px;
     }
@@ -175,32 +209,39 @@ body {
 }
 
 .breadcrumbs {
-    &__style{
+    @media @desktop {
+        position: absolute;
+        left: 40px;
+        top: 106px;
+    }
+    &__style {
         margin: 0;
         padding: 0;
         width: 100px;
         list-style-type: none;
+        font-family: 'PT Sans', sans-serif;
         font-size: 11px;
     }
 
 }
-.item{
+
+.item {
     float: left;
     margin-right: 5px;
+
 }
+
 .link {
     text-decoration: none;
     margin: 0;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 11px;
-    &_color{
+    &_color {
         color: red;
-        font-size: 11px;
+
     }
 }
 
 .videos {
-    height: 650px;
+    height: 575px;
     overflow: hidden;
     @media @tablet {
         height: auto;
@@ -230,7 +271,14 @@ body {
     margin-bottom: 12px;
     padding: 0;
     @media @tablet {
-        font-size: 5em;
+        margin-top: 18px;
+        font-size: 58px;
+        margin-bottom: 50px;
+    }
+    @media@desktop{
+        margin-top: 26px;
+        font-size: 75px;
+        margin-bottom: 15px;
     }
 }
 
@@ -241,11 +289,11 @@ body {
 }
 
 .loadMore {
+    width: 140px;
+    height: 44px;
     margin: 0 auto;
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 16px;
-    width: 140px;
-    height: 44px;
     font-weight: 100;
     background-color: #262626;
     color: #ccc;
@@ -267,7 +315,7 @@ body {
     position: relative;
     padding-top: 25px;
     @media @tablet {
-        height: 43px;
+        height: 45px;
         padding-top: 0;
     }
     &__menu {
@@ -335,7 +383,7 @@ body {
     @media @tablet {
         width: 150px;
         position: absolute;
-        top: 10px;
+        top: 16px;
         right: 25px;
         text-align: right;
     }
@@ -415,14 +463,9 @@ body {
     }
 }
 
-form {
-    position: relative;
-    width: 300px;
-    margin: 0 auto;
-    height: 42px;
-}
 
-input {
+
+#field {
     height: 30px;
     width: 0;
     padding: 0 42px 0 15px;
@@ -437,11 +480,11 @@ input {
     z-index: 2;
 }
 
-input:focus {
+#field:focus {
     width: 100px;
     z-index: 2;
-    color: #cecece;
-    font-size: 0.8em;
+    color: white;
+    font-size: 14px;
     border-bottom: 2px solid #cccccc;
     @media @desktop {
         width: 220px;
@@ -498,7 +541,6 @@ input:focus {
     @media @tablet {
         width: 60px;
         height: 60px;
-        border: 1px solid black;
         border-radius: 30px;
     }
     &__icon {
@@ -516,4 +558,7 @@ input:focus {
             background-size: cover;
         }
     }
+}
+.play:hover{
+    border: 2px solid white;
 }
